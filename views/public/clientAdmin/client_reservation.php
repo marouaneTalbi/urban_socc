@@ -24,22 +24,9 @@ ob_start();
                 <div class="row mt-3">
                     <div class="col">
                         <label for="mail">heure</label>
-                        <select class="form-select" name="heure" id="">
-                        <?php foreach($heures as $heure ){ 
-
-
-                            foreach($heruesRes as $hres){  $h = $hres->getHeure();
-                                if( $hres == $h){
-                                    ?>
-                            <option value=""> </option> 
-                            <?php }else{?>
-
-                                <option value="<?php $heure->get  ?>"> </option>
-
-                            <?php }}}  ?>
-                        </select>
+                            <input type="time" step="360" min="9:00" max="21:00" class="form-control">
                     </div>
-                    <div class="col">q
+                    <div class="col">
                         <label for="">Durée</label>
                         <select class="form-select" name="dure" id="">
                             <option value="1h">1h</option>

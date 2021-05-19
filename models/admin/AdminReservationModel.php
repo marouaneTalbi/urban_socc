@@ -28,15 +28,16 @@ class AdminReservationModel extends DBConn{
             $res->getMatch()->setMatch_name($row->match_name);
             $res->getClient()->setId($row->id_client);
             $res->getClient()->setFirstname($row->firstname);
-            $res->setDate($row->date);
-            $res->setHeure($row->heure);
-            $res->setDure($row->dure);
+            $res->setStart($row->start);
+            $res->setEnd($row->end);
+ 
 
             array_push($tabM, $res);
         }
 
             return $tabM;
     }
+
 
     public function deleteRes($id){
 
@@ -52,16 +53,14 @@ class AdminReservationModel extends DBConn{
             $sql = "UPDATE reservation
                     SET 
                     id_match = :id_match, 
-                    date = :date, 
-                    heure = :heure, 
-                    dure = :dure
+                    date_debut = :date_debut, 
+                    date_fin = :date_fin, 
                     WHERE id_res = :id_res";
 
                     $tabPaname = [
                                 "id_match"=>$res->getMatch()->getId_match(),
-                                "date"=>$res->getDate(),
-                                "heure"=>$res->getHeure(),
-                                "dure"=>$res->getDure(),
+                                "date_debut"=>$res->getStart(),
+                                "date_fin"=>$res->getEnd(),
                                 "id_res"=>$res->getId_res()
                             ];
                             
@@ -96,9 +95,8 @@ class AdminReservationModel extends DBConn{
                 $editRes->getClient()->setId($row->id_client);
                 $editRes->getMatch()->setMatch_name($row->match_name);
                 $editRes->getClient()->setFirstname($row->firstname);
-                $editRes->setDate($row->date);
-                $editRes->setHeure($row->heure);
-                $editRes->setDure($row->dure);
+                $editRes->setStart($row->start);
+                $editRes->setEnd($row->end);
 
             return $editRes;
         }
@@ -114,10 +112,8 @@ class AdminReservationModel extends DBConn{
     
             "id_match"=>$res->getMatch()->getId_match(),
             "id_client"=>$res->getClient()->getId(),
-            "date"=>$res->getDate(),
-            "heure"=>$res->getHeure(),
-            "dure"=>$res->getDure(),
-    
+            "date_debut"=>$res->getStart(),
+            "date_fin"=>$res->getEnd(),
                 ];
     
         $result = $this->getRequest($sql, $tabParame);
@@ -126,7 +122,47 @@ class AdminReservationModel extends DBConn{
     
     }
 
+    public function getReservationJson(){
 
+        $sql = "SELECT *
+                FROM reservation r
+                INNER JOIN 
+                matchs m
+                on r.id_match = m.id_match
+                INNER JOIN 
+                user_client c
+                on r.id_client = c.id";
+                 
+        $result = $this->getRequest($sql);
+
+
+        $rows = $result->fetchAll(PDO::FETCH_OBJ);
+        $tabMs = [];
+
+        foreach($rows as $row)  {
+            
+            $res = new Reservation();
+
+            $res->setId_res($row->id_res);
+            $res->getMatch()->setId_match($row->id_match);
+            $res->getMatch()->setMatch_name($row->match_name);
+            $res->getClient()->setId($row->id_client);
+            $res->getClient()->setFirstname($row->firstname);
+            $res->setStart($row->start);
+            $res->setEnd($row->end);
+ 
+
+            array_push($tabMs, $res);
+        }
+
+
+
+
+       
+   
+
+        echo json_encode($tabMs);
+    }
    
 
 

@@ -21,6 +21,7 @@ class AdminReservationController{
   
   
           $allR = $this->admRes->getReservation();
+          
           require_once('./views/admin/reservation/adminReservationList.php');
   
       }
@@ -53,7 +54,6 @@ class AdminReservationController{
             $id = $_GET['id'];
             
             $res = new Reservation();
-            
             $res->setId_res($id);
             $editRes = $this->admRes->recupRes($res);
             $Matchs = $this->admM->getMatchs();
@@ -64,15 +64,14 @@ class AdminReservationController{
                
                $id_client = trim(htmlentities(addslashes($_POST['id_client'])));
                $id_match = trim(htmlentities(addslashes($_POST['id_match'])));
-               $date = trim(htmlentities(addslashes($_POST['date'])));
-               $heure = trim(htmlentities(addslashes($_POST['heure'])));
-               $dure = trim(htmlentities(addslashes($_POST['dure'])));
+               $date_debut = trim(htmlentities(addslashes($_POST['date_debut'])));
+               $date_fin = trim(htmlentities(addslashes($_POST['date_fin'])));
                
                $editRes->getMatch()->setId_match($id_match);
                $editRes->getClient()->setId($id_client);
-               $editRes->setDate($date);
-               $editRes->setHeure($heure);
-               $editRes->setDure($dure);
+               $editRes->setStart($date_debut);
+               $editRes->setEnd($date_fin);
+           
                
                 $ok = $this->admRes->updateReservation($editRes); 
       
@@ -84,47 +83,58 @@ class AdminReservationController{
     }
     public function ajoutRes(){
 
-        AuthController::isLogged();
+        // AuthController::isLogged();
   
-          if(isset ($_POST['submit'])){
+        //   if(isset ($_POST['submit'])){
   
-              if(isset($_POST['id_match']) && isset($_POST['id_client'])&& isset($_POST['date'])){
+        //       if(isset($_POST['id_match']) && isset($_POST['id_client'])&& isset($_POST['date'])){
   
-                  $id_match = trim(htmlentities(addslashes($_POST['id_match'])));
-                  $id_client = trim(htmlentities(addslashes($_POST['id_client'])));
-                  $date = trim(htmlentities(addslashes($_POST['date'])));
-                  $heure = trim(htmlentities(addslashes($_POST['heure'])));
-                  $dure =trim(htmlentities(addslashes($_POST['dure'])));
+        //           $id_match = trim(htmlentities(addslashes($_POST['id_match'])));
+        //           $id_client = trim(htmlentities(addslashes($_POST['id_client'])));
+        //           $date_debut = trim(htmlentities(addslashes($_POST['date_debut'])));
+        //           $date_fin = trim(htmlentities(addslashes($_POST['date_fin'])));
 
-                  echo 
-                  '<br>id_client  : '.$id_client .
-                  '<br>id_match : '. $id_match .
-                  '<br>date : '.$date .
-                  '<br>heure : '.$heure .
-                  '<br>dure : '. $dure.'<br>';
   
-              $res = new Reservation();
+        //       $res = new Reservation();
   
-                  $res->getClient()->setId($id_client);
-                  $res->getMatch()->setId_match($id_match);
-                  $res->setDate($date);
-                  $res->setHeure($heure);
-                  $res->setDure($dure);
+        //           $res->getClient()->setId($id_client);
+        //           $res->getMatch()->setId_match($id_match);
+        //           $res->setStart($date_fin);
+        //           $res->setEnd($date_fin);
+
         
-                 var_dump($res);
+        //          var_dump($res);
 
     
-              $oui = $this->admRes->insertRes($res);
+        //       $oui = $this->admRes->insertRes($res);
 
-                  if($oui){
-                      header('location:index.php?action=list_user');
-                  }
-              }
-          }
+        //         //   if($oui){
+        //         //       header('location:index.php?action=list_user');
+        //         //   }
+        //       }
+        //   }
+                
+
+                
+        
                 $matchs = $this->admM->getMatchs();
                 $clients = $this->admC->getClients();
+        //         $reservations = $this->admRes->getReservationJson();
+
+ 
               require_once('./views/admin/reservation/adminAddReservation.php');
       }
+
+
+
+
+      public function fullCallendar(){
+
+        require_once('./assets/js/fullcal.php');
+
+      }
+
+
 
 
 

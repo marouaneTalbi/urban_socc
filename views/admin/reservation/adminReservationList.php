@@ -26,9 +26,9 @@ ob_start();
                     <td><?=$res->getId_res();?></td>
                     <td><?=$res->getMatch()->getMatch_name();?></td>
                     <td><?=$res->getClient()->getFirstname();?></td>
-                    <td><?=$res->getDate();?></td>
-                    <td><?=$res->getHeure();?></td>
-                    <td><?=$res->getDure();?></td>
+                    <td><?=$res->getStart();?></td>
+                    <td><?=$res->getEnd();?></td>
+                
 
                     <td class="text-center">
                         <a class="btn btn-success" href="index.php?action=modif_res&id=<?=$res->getId_res();?>">

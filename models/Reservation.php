@@ -5,10 +5,9 @@ class Reservation {
     private $id_res;
     private $match;
     private $client;
-    private $date;
-    private $heure;
-    private $dure;
-    private $disponible;
+    private $start;
+    private $end;
+
 
     public function __construct()
     {
@@ -77,82 +76,43 @@ class Reservation {
         return $this;
     }
 
+
     /**
-     * Get the value of date
+     * Get the value of start
      */ 
-    public function getDate()
+    public function getStart()
     {
-        return $this->date;
+        return $this->start;
     }
 
     /**
-     * Set the value of date
+     * Set the value of start
      *
      * @return  self
      */ 
-    public function setDate($date)
+    public function setStart($start)
     {
-        $this->date = $date;
+        $this->start = $start;
 
         return $this;
     }
 
     /**
-     * Get the value of heure
+     * Get the value of end
      */ 
-    public function getHeure()
+    public function getEnd()
     {
-        return $this->heure;
+        return $this->end;
     }
 
     /**
-     * Set the value of heure
+     * Set the value of end
      *
      * @return  self
      */ 
-    public function setHeure($heure)
+    public function setEnd($end)
     {
-        $this->heure = $heure;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of dure
-     */ 
-    public function getDure()
-    {
-        return $this->dure;
-    }
-
-    /**
-     * Set the value of dure
-     *
-     * @return  self
-     */ 
-    public function setDure($dure)
-    {
-        $this->dure = $dure;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of disponible
-     */ 
-    public function getDisponible()
-    {
-        return $this->disponible;
-    }
-
-    /**
-     * Set the value of disponible
-     *
-     * @return  self
-     */ 
-    public function setDisponible($disponible)
-    {
-        $this->disponible = $disponible;
+        $this->end = $end;
 
         return $this;
     }

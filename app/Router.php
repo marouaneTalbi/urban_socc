@@ -9,6 +9,7 @@ class Router{
     private $ctrC;
     private $ctrP;
     private $ctrPC;
+    private $ctrCalendar;
 
 
 
@@ -21,6 +22,7 @@ class Router{
             $this->ctrR = new AdminReservationController();
             $this->ctrP = new PublicController();
             $this->ctrPC = new PublicclientController();
+            $this->ctrCalendar = new AdminCalendarController();
     }
     public function getPath(){
 
@@ -90,14 +92,14 @@ class Router{
                                 case 'add_res':
                                     $this->ctrR->ajoutRes();
                                     break;
+                                case 'full_cal':
+                                    $this->ctrR->fullCallendar();
+                                    break;
 
                         //________________PUBLIC_Client_____________________________________
 
-                                // case 'inscription_client':
-                                //     $this->ctrPC->Inscription_client();
-                                //     break;
                                 case 'inscription_client':
-                                    $this->ctrPC->test();
+                                    $this->ctrPC->Inscription_client();
                                     break;
                                 case 'login_client':
                                     $this->ctrPC->login_client();
@@ -111,7 +113,23 @@ class Router{
                                 case 'logout_client':
                                     Auth_ClientController::logout();
                                     break;
-                 
+                        //________________CALENDAR_____________________________________
+                                
+                                case 'load_callendar':
+                                    $this->ctrCalendar->SelectCallendar();
+                                    break;
+                                case 'insert_callendar':
+                                    $this->ctrCalendar->InsertCallendar();
+                                    break;
+                                case 'modif_callendar':
+                                    $this->ctrCalendar->editCal();
+                                    break;
+                                case 'Supp_callendar':
+                                    $this->ctrCalendar->SuppCal();
+                                    break;
+                                case 'Terrin_callendar':
+                                    $this->ctrCalendar->SelectCallendarTerrins();
+                                    break;
                                 }
                             
                         }else{

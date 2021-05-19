@@ -128,20 +128,39 @@ public function Client_Reservation(){
         }
     }
     $heures=[
-        '9h00','9h30','10h00','10h30','11h00','11h30','12h00','12h30',
-        '13h00','13h30','14h00','14h30','15h00','15h30','16h00','16h30',
-        '17h00','17h30','18h00','18h30','19h00','19h30','20h00','20h30',
-        '21h00','21h30'];
+        9,'9:30','10:00','10:30','11:00','11:30','12:00','12:30',
+        '13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30',
+        '17:00','17:30','18:00','18:30','19:00','19:30','20:00','20:30',
+        '21:00','21:30'];
 
         $heruesRes = $this->admR->getReservation();
 
-  
+        $tab=[];
+        
+        foreach($heruesRes as $h){
+            array_push($tab,$h->getHeure());
+            
+        }
+ 
+        var_dump($tab);
 
+    function key_compare($a, $b)
+    {
+        if ($a === $b) {
+            return 0;
+        }
+        return ($a > $b)? -1:1;
+    }
 
-          $matchs = $this->admM->getMatchs();
-          $clients = $this->admC->getClients();
-        require_once('./views/public/clientAdmin/client_reservation.php');
-}
+    $result =(array_diff_uassoc($heures, $tab,"key_compare"));
+    
+    
+    
+    $matchs = $this->admM->getMatchs();
+    $clients = $this->admC->getClients();
+    require_once('./views/public/clientAdmin/client_reservation.php');
+        }
+
 
 public function MesRes(){
     Auth_ClientController::isLogged();
