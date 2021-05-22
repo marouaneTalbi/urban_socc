@@ -22,33 +22,21 @@ class AdminCalendarController{
 
 public function SelectCallendarTerrins(){
 
-    // if(isset($_POST['id_match'])){
-
-    //     $id = $_POST['id_match'];
-    //     $matchR = new Reservation();
-
-    //     $matchR->getMatch()->setId_match($id);
-        
-    //     $result = $this->adminCalendar->SelectTerrin($matchR);
-
-        
-    //     var_dump($result);
-    // }
-
     $dbh = new PDO('mysql:host=localhost; dbname=urban_soccer','root','');
 
 
-if(isset($_POST["id_match"]))
-{
+
 
     $dbh = new PDO('mysql:host=localhost; dbname=urban_soccer','root','');
     $data = [];
 
-        $sql = "SELECT * FROM reservation where id_match=id_match";
+        $sql = "SELECT * FROM reservation where id_match= ?";
         $stmt = $dbh->prepare($sql);
-        $stmt->execute(
+
+        $stmt->execute([
              $_POST['id_match'],
-            );
+        ]);
+
         $result = $stmt->fetchAll();
         foreach ($result as $row) {
 
@@ -66,7 +54,7 @@ if(isset($_POST["id_match"]))
 
         echo json_encode($data);
         
-    }
+   
     // $data = [];
 
     //     $sql = "SELECT * FROM reservation where id_match";

@@ -83,7 +83,10 @@
 </div>
 </div>
 
-
+<script  src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="./assets/js/templateAdmin.js"></script>
+<script  src="./assets/js/scriptAjax.js"></script>
 
 
 <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js'></script>
@@ -92,9 +95,6 @@
 <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.js'></script>
 
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="./assets/js/templateAdmin.js"></script>
-<script src="./assets/js/scriptAjax.js"></script>
 
 
 </body>

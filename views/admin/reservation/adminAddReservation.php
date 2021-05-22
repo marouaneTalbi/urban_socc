@@ -50,8 +50,8 @@ var_dump($_POST, true)
         </div>
     </div>
 </div> 
-<script async src="./assets/js/Calendar.js"></script>
 
 <?php $contenu = ob_get_clean(); 
     require_once("./views/templateAdmin.php");
 ?>
+<script async src="./assets/js/Calendar.js"></script>
