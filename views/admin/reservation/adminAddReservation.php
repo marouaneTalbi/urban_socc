@@ -2,10 +2,7 @@
 var_dump($_POST, true)
 ?>
 
-<script>
 
-
-</script>
 
 
  <div class="container col-10 card p-3 mt-5">

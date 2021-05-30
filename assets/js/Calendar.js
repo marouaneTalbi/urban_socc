@@ -12,6 +12,9 @@ $(document).ready(function() {
      center:'title',
      right:'month,agendaWeek,agendaDay'
     }, 
+    locale: 'es',
+    lang:'es',
+    
     events: function(start, end, timezone, callback) {  // Defining the event source as a function
       $.ajax({
           method: 'POST',

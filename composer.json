@@ -1,0 +1,14 @@
+{
+    "name": "talbi/articles12",
+    "description": "site des articles",
+    "authors": [
+        {
+            "name": "marouane",
+            "email": "marwane.berkani@gmail.com"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^7.76",
+        "phpmailer/phpmailer": "^6.4"
+    }
+}

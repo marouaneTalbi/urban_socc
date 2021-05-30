@@ -16,20 +16,15 @@ ob_start();
                 <th>Date</th>
                 <th>heure</th>
                 <th>duree</th>
-
             </tr>
         </thead>
         <tbody>
         <?php foreach ($allR as $MesRes) { ?>
-           
-                
                 <tr>
                     <td><?=$MesRes->getId_res();?></td>
                     <td><?=$MesRes->getMatch()->getMatch_name();?></td>
-                    <td><?=$MesRes->getDate();?></td>
-                    <td><?=$MesRes->getHeure();?></td>
-                    <td><?=$MesRes->getDure();?></td>
-                 
+                    <td><?=$MesRes->getStart();?></td>
+                    <td><?=$MesRes->getEnd();?></td>
                 </tr>
                 <?php } ?>
         </tbody>

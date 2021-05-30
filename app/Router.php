@@ -130,6 +130,17 @@ class Router{
                                 case 'Terrin_callendar':
                                     $this->ctrCalendar->SelectCallendarTerrins();
                                     break;
+                        //________________PAYMENT_____________________________________
+                                
+                                case 'payment_cal':
+                                    $this->ctrCalendar->PaymentCal();
+                                    break;
+                                case 'success':
+                                    $this->ctrCalendar->confirmation();
+                                    break;
+                                case 'success_page':
+                                    $this->ctrP->success();
+                                    break;
                                 }
                             
                         }else{

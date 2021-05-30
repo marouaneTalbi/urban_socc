@@ -34,9 +34,11 @@ class PublicClientModel extends DBConn{
                 $res->getMatch()->setMatch_name($row->match_name);
                 $res->getClient()->setId($row->id_client);
                 $res->getClient()->setFirstname($row->firstname);
-                $res->setDate($row->date);
-                $res->setHeure($row->heure);
-                $res->setDure($row->dure);
+                $res->setStart($row->start);
+                $res->setEnd($row->end);
+                // $res->setDate($row->date);
+                // $res->setHeure($row->heure);
+                // $res->setDure($row->dure);
     
                 array_push($tabM, $res);
             }

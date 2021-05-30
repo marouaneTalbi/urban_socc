@@ -7,41 +7,26 @@ class AdminCalendarModel extends DBConn {
 
 
     public function SelectTerrin(Reservation $reservation){
-        
-        // $sql = "SELECT *
-        //         FROM reservation r
-        //         INNER JOIN 
-        //         matchs m
-        //         on r.id_match = m.id_match
-        //         INNER JOIN 
-        //         user_client c
-        //         on r.id_client = c.id
-        //         WHERE id_match = :id_match";
-        
-        // $result = $this->getRequest($sql, ['id_match'=>$reservation->getMatch()->getId_match()]);
-        
-        // if($result->rowCount() > 0){
-            
-        //     $row = $result->fetch(PDO::FETCH_OBJ);
 
-        //         $editRes = new Reservation();
-        //         $editRes->setId_res($row->id_res);
-        //         $editRes->getMatch()->setId_match($row->id_match);
-        //         $editRes->getClient()->setId($row->id_client);
-        //         $editRes->getMatch()->setMatch_name($row->match_name);
-        //         $editRes->getClient()->setFirstname($row->firstname);
-        //         $editRes->setStart($row->start);
-        //         $editRes->setEnd($row->end);
+        $data = [];
+        $sql = "SELECT * FROM reservation where id_match= :id_match";
+        $stmt = $this->getRequest($sql, ['id_match'=>$reservation->getMatch()->getId_match()]);
 
-        //         // echo json_encode($editRes);
-
-        //         return $editRes;
-
-        // }
-
-
-      
+        $result = $stmt->fetchAll();
+        foreach ($result as $row) {
+            $data[] = array(
+                "id_res" => $row['id_res'],
+                 "id_match" => $row['id_match'],
+                "id_client" => $row['id_client'],
+                "start" => $row['start'],
+                "end" => $row['end'],
+            );
+        }
+         echo json_encode($data);
 }
+
+
+
     public function SelectCalendar(){
         
             $sql = "SELECT * FROM reservation order by id_res";
@@ -50,7 +35,7 @@ class AdminCalendarModel extends DBConn {
 
             foreach ($result as $row) {
 
-                    $tabMs[] = array(
+                $tabMs[] = array(
 
                     "id_res" => $row['id_res'],
                     "id_match" => $row['id_match'],
@@ -59,10 +44,7 @@ class AdminCalendarModel extends DBConn {
                     "end" => $row['end'],
                     );
                 }
-
                 echo json_encode($tabMs);
-
-          
     }
 
     public function InsertCal(Reservation $res){

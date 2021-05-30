@@ -62,12 +62,6 @@ public function Inscription_client(){
 
 }
 
-public function test(){
-
-    echo'123';
-    require_once('./views/public/clientAdmin/inscription_connexion.php');
-
-}
 
 public function login_client(){
 
@@ -100,60 +94,6 @@ public function Client_Reservation(){
     Auth_ClientController::isLogged();
 
 
-    if(isset ($_POST['submit'])){
-  
-        if(isset($_POST['id_match']) && isset($_POST['date'])){
-
-            $id_match = trim(htmlentities(addslashes($_POST['id_match'])));
-            $id_client = trim(htmlentities(addslashes($_SESSION['Auth_client']->id)));
-            $date = trim(htmlentities(addslashes($_POST['date'])));
-            $heure = trim(htmlentities(addslashes($_POST['heure'])));
-            $dure =trim(htmlentities(addslashes($_POST['dure'])));
-
-        $res = new Reservation();
-
-            $res->getClient()->setId($id_client);
-            $res->getMatch()->setId_match($id_match);
-            $res->setDate($date);
-            $res->setHeure($heure);
-            $res->setDure($dure);
-  
-           var_dump($res);
-
-        $oui = $this->admR->insertRes($res);
-
-            if($oui){
-                header('location:index.php?action=client_mesRes');
-            }
-        }
-    }
-    $heures=[
-        9,'9:30','10:00','10:30','11:00','11:30','12:00','12:30',
-        '13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30',
-        '17:00','17:30','18:00','18:30','19:00','19:30','20:00','20:30',
-        '21:00','21:30'];
-
-        $heruesRes = $this->admR->getReservation();
-
-        $tab=[];
-        
-        foreach($heruesRes as $h){
-            array_push($tab,$h->getHeure());
-            
-        }
- 
-        var_dump($tab);
-
-    function key_compare($a, $b)
-    {
-        if ($a === $b) {
-            return 0;
-        }
-        return ($a > $b)? -1:1;
-    }
-
-    $result =(array_diff_uassoc($heures, $tab,"key_compare"));
-    
     
     
     $matchs = $this->admM->getMatchs();

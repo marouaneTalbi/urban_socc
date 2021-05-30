@@ -4,128 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyCar</title>
+    <title>Urban-Soccer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/templatePublic.css">
+    <link rel="stylesheet" href="./assets/css/templatePublic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style1.css"type="text/css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-</head>
-<body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid"> 
-       <a href="index.php" class="  col-3 " style="text-decoration:none">
-        <img src="./assets/images/logo.png" alt="" width="90">
-        <p class="d-inline h1 text-white" style="font-family: Georgia, serif;">URBAN-
-        <p class="d-inline h1 text-danger" style="font-family: Georgia, serif;">SOCCER</p>
-         </p> </a>
-          <div class="collapse navbar-collapse " style="margin-left: 600px;" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item m-2 h4 col-5">
-                <a class="nav-link active" aria-current="page" href="index.php?action=accueil" style="font-family: Georgia, serif;">Accueil</a>
-              </li>
-              <li class="nav-item m-2 h5 col-5">
-                <a class="nav-link border border-success" href="index.php?action=login_client" style="font-family: Georgia, serif;">Se connecter</a>
-              </li>
-              <li class="nav-item m-2 h5 col-4">
-                <a class="nav-link border border-success" href="index.php?action=inscription_client" style="font-family: Georgia, serif;">Inscription</a>
-              </li>
-            </ul>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body class="bg-dark" >
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid"> 
+              <a href="index.php" class=" col-3 mt-2" style="text-decoration:none">
+              <p class="d-inline h4 text-white" style="font-family: Georgia, serif;">URBAN-
+              <p class="d-inline h4 text-danger" style="font-family: Georgia, serif;">SOCCER</p>
+              </p> </a>
+                <div class="collapse navbar-collapse " style="margin-left:50%;" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item m-2 h5 col-5">
+                      <a class="nav-link active" aria-current="page" href="index.php?action=accueil" style="font-family: Georgia, serif;">Accueil</a>
+                    </li>
+                    <li class="nav-item m-2 h7 col-4 text-center">
+                      <a class="nav-link border border-success" href="index.php?action=login_client" style="font-family: Georgia, serif;">Se connecter</a>
+                    </li>
+                    <li class="nav-item m-2 h7 col-4 text-center">
+                      <a class="nav-link border border-success" href="index.php?action=inscription_client" style="font-family: Georgia, serif;">Inscription</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+      </header>
+
+
+  <div id="home">
+      <div class="row  col-12">
+        <div class="col-6 text-center   text-white"id="titre">
+            <h1 id="pop"> URBAN<br><p class="text-white d-inline">SOCCER</p></h1>
+        </div>
+        <div class=" col-6  text-center" id="divRes1">
+          <div class="card p-5 d-flex justify-content-center" id="divRes">
+            <h3>RESERVER MAINTENANT</h3>
           </div>
         </div>
-      </nav>
-</header>
+      </div>
+  </div>
 
-<div class=" bg-light p-5" style="background-image: url(./assets/images/rrr.jpeg) ;background-size:cover; height:2000px">
-<main class="bg-light container " >
-        <div class=" col-12  bg-light " style="height:500px;">
-            <div class="row">
-                <div class=" p-4 col-5 mt-5 offset-1">
-                     <img src="./assets/images/logo.png" alt="" style="width:400px">
-                </div>
-                <div class="p-4 col-6 text-center mt-5  text-DARK">
-                    <h1 style="font-family: Georgia, serif; font-size:100px" >
-                    URBAN
-                    <p class="text-danger d-inline">SOCCER</p>
-                    </h1>
-                </div>
+
+  <div id="tarifClients" class="container ">
+      <div class="row offset-1 " id="tarifs">
+          <div class=" col-4   text-white card m-1  text-center d-flex justify-content-center p-3" id="infoTarif">
+          <p id="paraph"> Tarifs terrains  :<br>
+            Du lundi au vendredi de 09h00 à 21H
+            Les week-end de 9h00 à 21H
+            Vacances scolaires et tous les jours fériés inclus.</p>
+          </div>
+          <div class=" col-3 m-0 card p-2 text-white text-center m-1 d-flex justify-content-center p-0"id="infoTarif">
+              <h1 >NOS TARIFS</h1>
+              <p id="paraph">30 min: 50€</p>
+              <p id="paraph">1h : 100€</p>
+              <p id="paraph">1h30 min: 150€</p>
+          </div>
+          <div class=" col-4  card text-white  text-center m-1 d-flex justify-content-center offset-1"id="infoTarif">
+              <h1 id="paraph"> PARTICIPEZ A NOS TOURNOIS ET GAGNER JUSQUA 1500€ <br> PAR EQUIPE </h1>
+
+          </div>
+      </div>
+  </div>
+
+  <div id="terrain" class="row">
+      <div id="infoImage" class=" col-6 text-center mt-5">
+        <h1><p id="infoP" class="d-inline text-danger ">VISITEZ LE </p><p id="infoP" class="d-inline text-white">CENTRE</p></h1>
+        
+        <p class="text-white p-5 text-center mt-5" id="infoP2">Votre centre UrbanSoccer met à votre disposition des terrains de foot 5 indoor en synthétique dernière génération, des vestiaires avec douches, un parking et un club house pour vous relaxer après votre match!</p>
+        
+        <div class="row offset-1  " id="tarifs2">
+              <div class=" col-5  card text-white  text-center m-1 d-flex justify-content-center offset-0"id="infoTarif2">
+                  <h1 class="h5"> RESERVER EN UN CLICK. </h1>
+              </div>
+              <div class=" col-5   text-white card m-1 text-center d-flex justify-content-center " id="infoTarif2">
+              <p  class="textTel">  OU EN APPLANT AU<br> 07 56 98 21 45.</p>
+              </div>
+          </div>
+      </div>
+
+        <div id="image1" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/images/terrain2.jpg" class="d-block w-100 "  alt="..."></a>
+              </div>
+              <div class="carousel-item">
+               <img src="./assets/images/stars2.jpg" class="d-block w-100" alt="..."></a>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/terrain3.jpg" class="d-block w-100"  alt="..."></a>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/terrain4.jpg" class="d-block w-100"  alt="..."></a>
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/terrain5.jpg" class="d-block w-100"  alt="..."></a>
+              </div>
             </div>
-        </div>
-  </main>
+      </div>
+<!-- 
+  <div class="" style="height: 100%;">
+      <div id="clients" class="container ">
+          <div class="row offset-2 " id="tarifs">
+              <div class=" col-4  card text-white  text-center m-1 d-flex justify-content-center offset-1"id="infoTarif">
+                  <h1> RESERVER EN UN CLICK. </h1>
+              </div>
+              <div class=" col-4   text-white card m-1 text-center d-flex justify-content-center p-2" id="infoTarif">
+              <p id="paraph">  OU EN APPLANT AU<br> 07 56 98 42 36.</p>
+              </div>
+          </div>
+      </div>-->
+  </div> 
 
-<div class="container  mb-5"style="margin-top:100px" >
-  
-        <div class=" col-12   " style="height:400px; " > 
-            <div class="row">
 
-                <div class=" col-6 ">
-                <img src="./assets/images/art1.jpg" alt="" style="width:660px">
-                </div>
-                <div class=" col-6 ">
-                <img src="./assets/images/art22.png" alt="" style="width:662px">
-                </div>
+  <footer id="footer" class="bg-dark">
+      <div class="footer_info">
+          <div class="foo_footer_width about_foo text-center">
+              <h2 >About</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Eveniet beatae non fugit nobis maiores esse ad, vel dolorem, 
+                  quia ratione dolores repellat praesentium fugiat. Ullam earum iure quae enim blanditiis?</p>
+            <div class="foo_social-media ">
+                <ul class="foo_ul  offset-3" >
+                    <li ><a href="#" class="foo_a" ><i class="fab fa-instagram " ></i></a></li>
+                    <li ><a href="#" class="foo_a"><i class="fab fa-linkedin-square" ></i></a></li>
+                    <li ><a href="#" class="foo_a"><i class="fab fa-twitter" ></i></a></li>
+                </ul>
             </div>
-        </div>
-</div>
+          </div>
 
-<div class=" container bg-dark" style="height:500px; margin-top:250px">
-    <div class="row offset-1 ">
+        <div class="foo_footer_width link_foo text-center ">
+             <!--    <h2>Quick Link</h2>
+              <div class=" text-center">
+                <ul class="foo_ul col-10 ">
+                  <li ><a href="#" class="foo_a">Features</a></li>
+                  <li ><a href="#" class="foo_a">Gallery</a></li>
+                  <li ><a href="#" class="foo_a">Connexion</a></li> -->
+                  <!-- <li ><a href="#" class="foo_a">Register</a></li> -->
+                  <!-- <li ><a href="#" class="foo_a">Contact</a></li> -->
+                <!-- </ul>
+              </div>-->
+          </div>  
 
-        <div class=" col-3 mt-5 ">
-              <img src="./assets/images/it.jpg" alt="" style="width:175px">
+          <div class="foo_footer_width contactt_foo text-center ">
+              <h2 >Contact</h2>
+                  <ul class="foo_ul col-5 offset-4">
+                      <li >
+                          <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                          <p>75 rue paris 75000</p>
+                      </li>
+                      <li >
+                          <span><i class="far fa-envelope" class="text-white" style="color: white;" aria-hidden="true"></i></span>
+                          <a href="#" class="foo_a">urbain@soccer.net</a>
+                      </li>
+                      <li >
+                          <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                          <a href="#" class="foo_a">07 56 98 21 45</a>
+                      </li>
 
-              <p class="text-white p-2 col-6 text-center border border-light offset-1 mt-5">INFORMATIQUE</p>
-        </div>
-
-        <div class=" col-3 mt-5">
-              <img src="./assets/images/por.jpg" alt="" style="width:190px">
-              <p class="text-white col-5 p-2 text-center border border-light offset-1 mt-5">SPORT</p>
-
-        </div>
-
-        <div class=" col-3 mt-5">
-              <img src="./assets/images/popo.jpg" alt="" style="width:190px">
-              <p class="text-white col-5 p-2 text-center border border-light offset-1 mt-5">POLITIQUE</p>
-
-        </div>
-
-        <div class=" col-2 mt-5">
-              <img src="./assets/images/music.jpg" alt="" style="width:190px">
-              <p class="text-white col-9 p-2 text-center border border-light  offset-1 mt-5">MUSIC</p>
-
-        </div>
-    </div>
-</div>
-
-</div>
-
-<footer>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <div class="container-fluid">
-        <a href="index.php"><img src="./assets/images/logo.png" alt="" width="100"></a>
-
-      
-          <div class="collapse navbar-collapse text-center" id="navbarSupportedContent" style="margin-left: 400px;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link active" href="">Conditions générales</a></li>
-              <li class="nav-item"><a class="nav-link active" href="">Politique de confidentialité</a></li>
-              <li class="nav-item"><a class="nav-link active" href="">FAQ</a></li>
-             
-          
-            </ul>
-            <span ><a href="index.php?action=login"class="text-dark" >ADMINISTRATION</a> </span>
-            <span class="text-right text-white">Copyright<i class="fa fa-copyright" aria-hidden="true"></i>2021</span> 
-        </div>
-        </div>
-      </nav>
-</footer>
-
-
+                  </ul>
+          </div>
+      </div>
+      <div class="foo_copy-right">
+        <p>copyright &copy;2021 carvingWood. designed by L.rhafell</p>
+      </div>
+  </footer>
 
 
 <script async src="./assets/js/scriptStripe.js"></script>
@@ -140,5 +193,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"></script>
+<script async src="./assets/js/animation.js"></script>
+</div>
 </body>
 </html> 
