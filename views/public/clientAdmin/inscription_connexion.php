@@ -30,12 +30,13 @@ ob_start();
                     </div>
                     <div class="row mt-3">
                         <div class="col">
-                            <label for="login">Login</label>
-                            <input type="text" id="login" name="login" class="form-control" placeholder="Entrez le login">
-                        </div>
-                        <div class="col">
                             <label for="mail">Email</label>
                             <input type="text" id="email" name="email" class="form-control" placeholder="Entrez le mail">
+                        </div>
+                   
+                      <div class="col">
+                            <label for="login">Login</label>
+                            <input type="text" id="login" name="login" class="form-control" placeholder="Entrez le login">
                         </div>
                     </div>
                     <div class="col">

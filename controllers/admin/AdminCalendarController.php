@@ -50,23 +50,26 @@ public function InsertCallendar(){
 
 
 
-                   $id_match = trim(htmlentities(addslashes($_SESSION['pay']['id_match'])));
-                   $id_client = trim(htmlentities(addslashes($_SESSION['pay']['id_client'])));
-                   $date_start = trim(htmlentities(addslashes($_SESSION['pay']['start'])));
-                   $date_fin = trim(htmlentities(addslashes($_SESSION['pay']['end'])));
+    $id_match = trim(htmlentities(addslashes($_SESSION['pay']['id_match'])));
+    $id_client = trim(htmlentities(addslashes($_SESSION['pay']['id_client'])));
+    $date_start = trim(htmlentities(addslashes($_SESSION['pay']['start'])));
+    $date_fin = trim(htmlentities(addslashes($_SESSION['pay']['end'])));
 
-                   $res = new Reservation();
+var_dump($_SESSION['pay']);
 
-                   $res->getClient()->setId($id_client);
-                   $res->getMatch()->setId_match($id_match);
-                   $res->setStart($date_start);
-                   $res->setEnd($date_fin);
+   $res = new Reservation();
 
+   $res->getClient()->setId($id_client);
+   $res->getMatch()->setId_match($id_match);
+   $res->setStart($date_start);
+   $res->setEnd($date_fin);
 
-                $result = $this->adminCalendar->InsertCal($res);
-                if($result){
-                    header('location:index.php?action=client_mesRes');
-                }
+   
+   $result = $this->adminCalendar->InsertCal($res);
+   if($result){
+           header('location:index.php?action=success');
+       }
+       require_once('./views/public/calTest.php');
 
 
 }
@@ -105,7 +108,7 @@ public function PaymentCal(){
         ]],
         'customer_email'=> $email,
         'mode' => 'payment',
-        'success_url' => 'http://localhost/urban_soccer/index.php?action=success',
+        'success_url' => 'http://localhost/urban_soccer/index.php?action=insert_callendar',
         'cancel_url' => 'http://localhost/php/articles12/index.php?action=cancel',
         ]);
 

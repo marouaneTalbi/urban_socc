@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,56 +41,55 @@
       </header>
 
 
-  <div id="home">
-      <div class="row  col-12">
-        <div class="col-6 text-center   text-white"id="titre">
-            <h1 id="pop"> URBAN<br><p class="text-white d-inline">SOCCER</p></h1>
-        </div>
-        <div class=" col-6  text-center" id="divRes1">
-          <div class="card p-5 d-flex justify-content-center" id="divRes">
-            <h3>RESERVER MAINTENANT</h3>
-          </div>
-        </div>
-      </div>
-  </div>
-
-
-  <div id="tarifClients" class="container ">
-      <div class="row offset-1 " id="tarifs">
-          <div class=" col-4   text-white card m-1  text-center d-flex justify-content-center p-3" id="infoTarif">
-          <p id="paraph"> Tarifs terrains  :<br>
-            Du lundi au vendredi de 09h00 à 21H
-            Les week-end de 9h00 à 21H
-            Vacances scolaires et tous les jours fériés inclus.</p>
-          </div>
-          <div class=" col-3 m-0 card p-2 text-white text-center m-1 d-flex justify-content-center p-0"id="infoTarif">
-              <h1 >NOS TARIFS</h1>
-              <p id="paraph">30 min: 50€</p>
-              <p id="paraph">1h : 100€</p>
-              <p id="paraph">1h30 min: 150€</p>
-          </div>
-          <div class=" col-4  card text-white  text-center m-1 d-flex justify-content-center offset-1"id="infoTarif">
-              <h1 id="paraph"> PARTICIPEZ A NOS TOURNOIS ET GAGNER JUSQUA 1500€ <br> PAR EQUIPE </h1>
-
-          </div>
-      </div>
-  </div>
-
-  <div id="terrain" class="row">
-      <div id="infoImage" class=" col-6 text-center mt-5">
-        <h1><p id="infoP" class="d-inline text-danger ">VISITEZ LE </p><p id="infoP" class="d-inline text-white">CENTRE</p></h1>
-        
-        <p class="text-white p-5 text-center mt-5" id="infoP2">Votre centre UrbanSoccer met à votre disposition des terrains de foot 5 indoor en synthétique dernière génération, des vestiaires avec douches, un parking et un club house pour vous relaxer après votre match!</p>
-        
-        <div class="row offset-1  " id="tarifs2">
-              <div class=" col-5  card text-white  text-center m-1 d-flex justify-content-center offset-0"id="infoTarif2">
-                  <h1 class="h5"> RESERVER EN UN CLICK. </h1>
+      <div id="home">
+          <div class="row  col-12">
+            <div class="col-6 text-center   text-white"id="titre">
+                <h1 id="pop"> URBAN<br><p class="text-white d-inline">SOCCER</p></h1>
+            </div>
+            <div class=" col-6  text-center" id="divRes1">
+              <div class="card p-5 d-flex justify-content-center" id="divRes">
+               <a id="href" href="index.php?action=login_client" ><h3 >RESERVER MAINTENANT</h3></a>
               </div>
-              <div class=" col-5   text-white card m-1 text-center d-flex justify-content-center " id="infoTarif2">
-              <p  class="textTel">  OU EN APPLANT AU<br> 07 56 98 21 45.</p>
+            </div>
+          </div>
+      </div>
+
+
+      <div id="tarifClients" class="container ">
+          <div class="row offset-1 " id="tarifs">
+              <div class=" col-4   text-white card m-1  text-center d-flex justify-content-center p-3" id="infoTarif">
+              <p id="paraph"> Tarifs terrains  :<br>
+                Du lundi au vendredi de 09h00 à 21H
+                Les week-end de 9h00 à 21H
+                Vacances scolaires et tous les jours fériés inclus.</p>
+              </div>
+              <div class=" col-3 m-0 card p-2 text-white text-center m-1 d-flex justify-content-center p-0"id="infoTarif">
+                  <h1 class="h1_titre" >NOS TARIFS</h1>
+                  <p id="paraph">30 min: 50€</p>
+                  <p id="paraph">1h : 100€</p>
+                  <p id="paraph">1h30 min: 150€</p>
+              </div>
+              <div class=" col-4  card text-white  text-center m-1 d-flex justify-content-center offset-1"id="infoTarif">
+                  <h1 id="paraph"> PARTICIPEZ A NOS TOURNOIS ET GAGNER JUSQUA 1500€ <br> PAR EQUIPE </h1>
               </div>
           </div>
       </div>
+
+      <div id="terrain" class="row">
+          <div id="infoImage" class=" col-6 text-center mt-5">
+            <h1><p id="infoP" class="d-inline text-danger ">VISITEZ LE </p><p id="infoP" class="d-inline text-white">CENTRE</p></h1>
+            
+            <p class="text-white p-5 text-center mt-5" id="infoP2">Votre centre UrbanSoccer met à votre disposition des terrains de foot 5 indoor en synthétique dernière génération, des vestiaires avec douches, un parking et un club house pour vous relaxer après votre match!</p>
+            
+            <div class="row offset-1  " id="tarifs2">
+                  <div class=" col-5  card text-white  text-center m-1 d-flex justify-content-center offset-0"id="infoTarif2">
+                  <a id="href" href="index.php?action=login_client" class=" text-white"> <h1 class="h5"> RESERVER EN UN CLICK. </h1></a>
+                  </div>
+                  <div class=" col-5   text-white card m-1 text-center d-flex justify-content-center " id="infoTarif2">
+                  <p  class="textTel">  OU EN APPLANT AU<br> 07 56 98 21 45.</p>
+                  </div>
+              </div>
+          </div>
 
         <div id="image1" class="carousel slide mt-4" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -112,18 +110,6 @@
               </div>
             </div>
       </div>
-<!-- 
-  <div class="" style="height: 100%;">
-      <div id="clients" class="container ">
-          <div class="row offset-2 " id="tarifs">
-              <div class=" col-4  card text-white  text-center m-1 d-flex justify-content-center offset-1"id="infoTarif">
-                  <h1> RESERVER EN UN CLICK. </h1>
-              </div>
-              <div class=" col-4   text-white card m-1 text-center d-flex justify-content-center p-2" id="infoTarif">
-              <p id="paraph">  OU EN APPLANT AU<br> 07 56 98 42 36.</p>
-              </div>
-          </div>
-      </div>-->
   </div> 
 
 
@@ -131,52 +117,47 @@
       <div class="footer_info">
           <div class="foo_footer_width about_foo text-center">
               <h2 >About</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eveniet beatae non fugit nobis maiores esse ad, vel dolorem, 
-                  quia ratione dolores repellat praesentium fugiat. Ullam earum iure quae enim blanditiis?</p>
+                <p>L'UrbanLeague est la référence des championnats de Foot 5. 1 500 équipes pour partager un moment convivial sur le terrain et dans nos Club-House. Tous vos résultats et statistiques sur votre espace dédié MyUrban.</p>
             <div class="foo_social-media ">
                 <ul class="foo_ul  offset-3" >
                     <li ><a href="#" class="foo_a" ><i class="fab fa-instagram " ></i></a></li>
-                    <li ><a href="#" class="foo_a"><i class="fab fa-linkedin-square" ></i></a></li>
+                    <li ><a href="#" class="foo_a"><i class="fab fa-facebook" ></i></a></li>
                     <li ><a href="#" class="foo_a"><i class="fab fa-twitter" ></i></a></li>
                 </ul>
             </div>
           </div>
 
         <div class="foo_footer_width link_foo text-center ">
-             <!--    <h2>Quick Link</h2>
-              <div class=" text-center">
-                <ul class="foo_ul col-10 ">
-                  <li ><a href="#" class="foo_a">Features</a></li>
-                  <li ><a href="#" class="foo_a">Gallery</a></li>
-                  <li ><a href="#" class="foo_a">Connexion</a></li> -->
-                  <!-- <li ><a href="#" class="foo_a">Register</a></li> -->
-                  <!-- <li ><a href="#" class="foo_a">Contact</a></li> -->
-                <!-- </ul>
-              </div>-->
           </div>  
 
-          <div class="foo_footer_width contactt_foo text-center ">
+          <div class="foo_footer_width contactt_foo text-center  ">
               <h2 >Contact</h2>
-                  <ul class="foo_ul col-5 offset-4">
+                  <ul class="foo_ul text-center col-5 " >
                       <li >
-                          <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                          <p>75 rue paris 75000</p>
+                          <span><i id="footerI" class="fas fa-map-marker" aria-hidden="true"></i></span>
+                          <p id="footerItem">75 rue paris 75000</p>
                       </li>
                       <li >
-                          <span><i class="far fa-envelope" class="text-white" style="color: white;" aria-hidden="true"></i></span>
-                          <a href="#" class="foo_a">urbain@soccer.net</a>
+                          <span><i id="footerI" class="far fa-envelope" class="text-white" style="color: white;" aria-hidden="true"></i></span>
+                          <a href="#" id="footerItem" class="foo_a">urbain@soccer.net</a>
                       </li>
                       <li >
-                          <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                          <a href="#" class="foo_a">07 56 98 21 45</a>
+                          <span><i id="footerI" class="fas fa-phone" aria-hidden="true"></i></span>
+                          <a href="#" id="footerItem" class="foo_a">07 56 98 21 45</a>
                       </li>
 
                   </ul>
           </div>
+        
       </div>
+      <div class="border border-warning col-1 text-center ">
+        <a id="href"  href="index.php?action=login">
+          ADMIN
+        </a>
+        </div>
       <div class="foo_copy-right">
-        <p>copyright &copy;2021 carvingWood. designed by L.rhafell</p>
+        <p>copyright &copy;2021 URBAINSOCCER. designed by Talbi Marouane</p>
+     
       </div>
   </footer>
 

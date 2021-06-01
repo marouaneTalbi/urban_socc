@@ -1,0 +1,20 @@
+#pop{
+    height: 500px;
+    width: 40%;
+}
+#login1{
+    margin-top: 15%;
+}
+#card2{
+    margin-left: 26%;
+}
+#calendar{
+    opacity:0
+}
+#r{
+    background-color: rgb(150, 31, 31);
+}
+#aredirect{
+    text-decoration: none;
+    color: white;
+}

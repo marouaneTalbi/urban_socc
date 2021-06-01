@@ -5,17 +5,16 @@ ob_start();
 
 ?>
 
-<div class="container col-8">
+<div class="container col-8 card" class="bg-light">
 
-    <h1 class="display-6 text-center font-verdana border border-success mt-3 p-3 mb-5">Liste des ress</h1>
-    <table class="table table-striped border border-success mt-5">
+    <h1 class="display-6 text-center font-verdana border border-success   mt-3 p-3 mb-5">Liste des ress</h1>
+    <table class="table table-striped border border-dark mt-5 bg-light">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Match</th>
-                <th>Date</th>
-                <th>heure</th>
-                <th>duree</th>
+                <th>Date de debut</th>
+                <th>Date de fin</th>
             </tr>
         </thead>
         <tbody>
