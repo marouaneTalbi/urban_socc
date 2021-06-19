@@ -34,8 +34,6 @@ public function SelectCallendarTerrins(){
         $res->getMatch()->setId_match($id_match);
         $result  = $this->adminCalendar->SelectTerrin($res);
     }
-
-
 }
 
 public function SelectCallendar(){
@@ -43,19 +41,13 @@ public function SelectCallendar(){
        $result = $this->adminCalendar->SelectCalendar();
 }
 
-public function InsertCallendar(){
-
-         
+ public function InsertCallendar(){
     session_start();
-
-
 
     $id_match = trim(htmlentities(addslashes($_SESSION['pay']['id_match'])));
     $id_client = trim(htmlentities(addslashes($_SESSION['pay']['id_client'])));
     $date_start = trim(htmlentities(addslashes($_SESSION['pay']['start'])));
     $date_fin = trim(htmlentities(addslashes($_SESSION['pay']['end'])));
-
-var_dump($_SESSION['pay']);
 
    $res = new Reservation();
 
@@ -63,15 +55,32 @@ var_dump($_SESSION['pay']);
    $res->getMatch()->setId_match($id_match);
    $res->setStart($date_start);
    $res->setEnd($date_fin);
-
    
    $result = $this->adminCalendar->InsertCal($res);
    if($result){
            header('location:index.php?action=success');
        }
-       require_once('./views/public/calTest.php');
+ }
+
+public function InsertCallendarAdmin(){
+
+    $id_match = trim(htmlentities(addslashes($_POST['id_match'])));
+    $id_client = trim(htmlentities(addslashes($_POST['id_client'])));
+    $date_start = trim(htmlentities(addslashes($_POST['start'])));
+    $date_fin = trim(htmlentities(addslashes($_POST['end'])));
 
 
+    $res = new Reservation();
+    $res->getClient()->setId($id_client);
+    $res->getMatch()->setId_match($id_match);
+    $res->setStart($date_start);
+    $res->setEnd($date_fin);
+
+   $result = $this->adminCalendar->InsertCal($res);
+   if($result){
+           header('location:index.php?action=success');
+       }
+require_once('./views/public/test.php');
 }
 
 public function PaymentCal(){
@@ -86,9 +95,7 @@ public function PaymentCal(){
     $firstname = trim(htmlentities(addslashes($_POST['firstname'])));
 
     \Stripe\Stripe::setApiKey('sk_test_51IM8ZrEwRtoFpDAHRzosyjI15p26BORIEDgbmAyTU6vftlVeTcKt3ncppiL7SPkqlOcKYsH3sdHfo41hvqrgBb4G00hRY1LExZ');
-
     header('Content-Type: application/json');
-
     session_start();
     $_SESSION['pay'] = $_POST;
 
@@ -115,19 +122,19 @@ public function PaymentCal(){
         echo json_encode(['id' => $checkout_session->id]);
 
 }
+
 public function confirmation(){
-                
  session_start();
     
     $email = $_SESSION['pay']['email'];
-    $titre = $_SESSION['pay']['firstname'];
-    $auteur = $_SESSION['pay']['name'];
+    $firstname = $_SESSION['pay']['firstname'];
+    $name = $_SESSION['pay']['name'];
     $prix = $_SESSION['pay']['prix'];
+    $start = $_SESSION['pay']['start'];
+    $end = $_SESSION['pay']['end'];
     
     $mail = new PHPMailer(true);
-    
     try {
-    
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
     $mail->isSMTP();                                           
     $mail->Host       = 'smtp.gmail.com';                  
@@ -137,38 +144,34 @@ public function confirmation(){
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
     $mail->Port       = 587;                                    
     
-    //Recipients
-    $mail->setFrom('dwwm94@gmail.com', 'contact eart');
+    $mail->setFrom('dwwm94@gmail.com', 'URBAN SOCCER');
     $mail->addAddress($email, 'Mr/Mme');     
     
     
-    //Content
     $mail->isHTML(true);                                  
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'Reservation';
     $mail->Body    = "
-    <h2>confirmation d'achat</h2>
+    <h2>confirmation de reservation</h2>
     <div>
-    <b> Titre : $titre</b>
-    <b> Auteur : $auteur</b>
+    Bonjour
+    <b>  $firstname $name </b>
+    <b>Vous avez effectue une reservation sur notre plateforme.</b>
+    <b>Voici les detailles de votre reservation </b>
+    <b>Date de debut : $start </b>
+    <b>Date de fin : $end </b>
     <b> Prix : $prix €</b>
-    <p>nous vous Remercions pour votre achat !</p>
+    <p>nous vous Remercions pour votre Reservation a tres bientot !</p>
+
     </div>";
-    
     $mail->send();
-    // echo 'Message has been sent';
-    
-    
+     echo 'Message has been sent';
     } catch (Exception $e) {
-    
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-    
     require_once('./views/public/success.php');
-    
     }
 
-    public function editCal(){
-
+public function editCal(){
     if(isset($_POST['id_res'])){
 
          $id = $_POST['id_res'];
@@ -181,10 +184,8 @@ public function confirmation(){
             $editRes->setEnd($date_fin);
             $ok = $this->adminCalendar->UpdatetCal($editRes); 
     }
-
-            
       
-         }
+}
 
 public function SuppCal(){
 

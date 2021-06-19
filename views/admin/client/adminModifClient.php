@@ -2,7 +2,7 @@
 
 ?>
 <div class="container col-10 card p-3 mt-5">
-<h1 class="text-center display-6 font-verdana border border-warning mt-3 p-3">Formulaire de modification de l'utilisateur N°00<?=$editUs->getId();?></h1>
+<h1 class="text-center display-6 font-verdana border border-warning mt-3 p-3">Formulaire de modification du Client N°00<?=$editUs->getId();?></h1>
     <div class="row">
         <div class="col-8 offset-2">
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="text-center" enctype="multipart/form-data">

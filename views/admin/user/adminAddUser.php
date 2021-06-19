@@ -1,8 +1,6 @@
 <?php
 ob_start();
-
 ?>
-
 <div class="container col-10 card p-1 mt-5">
 <h2 class="text-center display-6 font-verdana border border-danger mt-3 p-3">Formulaire d'inscription </h2>
     <div class="row">

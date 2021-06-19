@@ -2,9 +2,7 @@
 ob_start();
 ?>
 <div class="container col-10">
-
 <h1 class="display-6 text-center font-verdana border border-success mt-3 p-3">Listes des Utilisateurs</h1>
-
 <table class="table table-striped mt-5 border border-success" >
     <thead>
         <tr>
@@ -14,10 +12,8 @@ ob_start();
             <th>Login</th>
             <th>Email</th>
             <th>Poste</th>
-            <?php // if($_SESSION['Auth']->role == 1){ ?>
                 <th class="text-center">In/Out</th>
                 <th colspan="2" class="text-center">Actions</th>
-                <?php // } ?>
             </tr>
         </thead>
         <tbody>
@@ -28,25 +24,14 @@ ob_start();
                     <td><?=$user->getName();?></td>
                     <td><?=$user->getLogin();?></td>
                     <td><?=$user->getEmail();?></td>
-                    
                     <?php if ($user->getGrade() ==1){
-                        
                         echo'<td>superadmin</td>';
-                        
                     }else if($user->getGrade() ==2){
                         echo'<td>admin</td>';
-                        
-                        
                     }else{
-                        
                         echo'<td>user</td>';
-                        
                     }?>
-
-<?php //if($_SESSION['Auth']->role == 1){ ?>          
-
 <td class="text-center">
-    
     <?php
     echo ($user->getStatus())
     ? "<a href='index.php?action=list_user&id=".$user->getId()."&status=".$user->getStatus()."'
@@ -69,7 +54,6 @@ ob_start();
                 <i class="fas fa-trash"></i>
             </a>
         </td>
-        <?php //} ?>
     </tr>
     <?php } ?>
 </tbody>

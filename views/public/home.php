@@ -23,10 +23,13 @@
               <p class="d-inline h4 text-white" style="font-family: Georgia, serif;">URBAN-
               <p class="d-inline h4 text-danger" style="font-family: Georgia, serif;">SOCCER</p>
               </p> </a>
-                <div class="collapse navbar-collapse " style="margin-left:50%;" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse " style="margin-left:30%;" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item m-2 h5 col-5">
                       <a class="nav-link active" aria-current="page" href="index.php?action=accueil" style="font-family: Georgia, serif;">Accueil</a>
+                    </li>
+                    <li class="nav-item m-2 h5 col-5">
+                      <a class="nav-link active" aria-current="page" href="index.php?action=tournois" style="font-family: Georgia, serif;">Tournois</a>
                     </li>
                     <li class="nav-item m-2 h7 col-4 text-center">
                       <a class="nav-link border border-success" href="index.php?action=login_client" style="font-family: Georgia, serif;">Se connecter</a>
@@ -39,8 +42,6 @@
               </div>
             </nav>
       </header>
-
-
       <div id="home">
           <div class="row  col-12">
             <div class="col-6 text-center   text-white"id="titre">
@@ -53,8 +54,6 @@
             </div>
           </div>
       </div>
-
-
       <div id="tarifClients" class="container ">
           <div class="row offset-1 " id="tarifs">
               <div class=" col-4   text-white card m-1  text-center d-flex justify-content-center p-3" id="infoTarif">
@@ -74,7 +73,6 @@
               </div>
           </div>
       </div>
-
       <div id="terrain" class="row">
           <div id="infoImage" class=" col-6 text-center mt-5">
             <h1><p id="infoP" class="d-inline text-danger ">VISITEZ LE </p><p id="infoP" class="d-inline text-white">CENTRE</p></h1>
@@ -90,7 +88,6 @@
                   </div>
               </div>
           </div>
-
         <div id="image1" class="carousel slide mt-4" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -127,26 +124,23 @@
             </div>
           </div>
 
-        <div class="foo_footer_width link_foo text-center ">
-          </div>  
-
+        <div class="foo_footer_width link_foo text-center "></div>  
           <div class="foo_footer_width contactt_foo text-center  ">
               <h2 >Contact</h2>
-                  <ul class="foo_ul text-center col-5 " >
-                      <li >
-                          <span><i id="footerI" class="fas fa-map-marker" aria-hidden="true"></i></span>
-                          <p id="footerItem">75 rue paris 75000</p>
-                      </li>
-                      <li >
-                          <span><i id="footerI" class="far fa-envelope" class="text-white" style="color: white;" aria-hidden="true"></i></span>
-                          <a href="#" id="footerItem" class="foo_a">urbain@soccer.net</a>
-                      </li>
-                      <li >
-                          <span><i id="footerI" class="fas fa-phone" aria-hidden="true"></i></span>
-                          <a href="#" id="footerItem" class="foo_a">07 56 98 21 45</a>
-                      </li>
-
-                  </ul>
+              <ul class="foo_ul text-center col-5 " >
+                  <li >
+                      <span><i id="footerI" class="fas fa-map-marker" aria-hidden="true"></i></span>
+                      <p id="footerItem">75 rue paris 75000</p>
+                  </li>
+                  <li >
+                      <span><i id="footerI" class="far fa-envelope" class="text-white" style="color: white;" aria-hidden="true"></i></span>
+                      <a href="#" id="footerItem" class="foo_a">urbain@soccer.net</a>
+                  </li>
+                  <li >
+                      <span><i id="footerI" class="fas fa-phone" aria-hidden="true"></i></span>
+                      <a href="#" id="footerItem" class="foo_a">07 56 98 21 45</a>
+                  </li>
+              </ul>
           </div>
         
       </div>
@@ -161,9 +155,7 @@
       </div>
   </footer>
 
-
 <script async src="./assets/js/scriptStripe.js"></script>
-
 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>

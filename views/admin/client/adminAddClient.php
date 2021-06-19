@@ -1,9 +1,6 @@
 <?php
 ob_start();
-
-var_dump($_POST)
 ?>
-
 <div class="container col-10 card p-1 mt-5">
 <h2 class="text-center display-6 font-verdana border border-danger mt-3 p-3">Formulaire d'inscription </h2>
     <div class="row">
@@ -33,13 +30,10 @@ var_dump($_POST)
                         <select id="cat" name="cat" class="form-select">
                         <option value="">Choisir</option>
                         <?php foreach ($allM as  $match) {;?>
-                           
-                      
                         <option value="<?=$match->getId_match();?>"><?=$match->getMatch_name();?></option>
                         <?php   } ;?>
                         </select>
                     </div>
-      
                 </div>
                 <div class="row mt-3">
                     <div class="col">

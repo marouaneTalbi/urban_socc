@@ -6,15 +6,12 @@ $data = $_SESSION['Auth_client'];
 <script  type="text/javascript">
 var x = '<?php echo json_encode($_SESSION['Auth_client']) ?>';
 </script>
-
-
 ok</button>
-
 <div class="container bg-light col-9 card p-3 mt-5"  >
     <h1 class="text-center display-6 font-verdana  mt-3 ">CHOISISSEZ UN TERRAIN</h1>
     <div class="row">
         <div class="col-8 offset-2">
-            <form action="index.php?action=payment_cal" method="post" class="text-center" >
+            <form  method="post" class="text-center" >
                     <div class="row mt-3">
                         <label for="">Terrains</label>
                             <select class="form-select" name="id_match" id="id_match">

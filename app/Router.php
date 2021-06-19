@@ -11,8 +11,6 @@ class Router{
     private $ctrPC;
     private $ctrCalendar;
 
-
-
     
     public function __construct()
     {
@@ -26,6 +24,7 @@ class Router{
     }
     public function getPath(){
 
+        try{
         if(isset($_GET['action'])){
 
                     switch($_GET['action']){
@@ -130,6 +129,9 @@ class Router{
                                 case 'Terrin_callendar':
                                     $this->ctrCalendar->SelectCallendarTerrins();
                                     break;
+                                case 'insert_callendar_Admin':
+                                    $this->ctrCalendar->InsertCallendarAdmin();
+                                    break;
                         //________________PAYMENT_____________________________________
                                 
                                 case 'payment_cal':
@@ -141,16 +143,32 @@ class Router{
                                 case 'success_page':
                                     $this->ctrP->success();
                                     break;
+                        //________________PAGES_____________________________________
+                                case 'tournois':
+                                    $this->ctrP->Tournois();
+                                    break;
+
+
+                                default:
+                                throw new Exception('Action non définie');
                                 }
                             
                         }else{
 
                             $this->ctrP->home();
                             session_unset();
-            
                         } 
-                    }
+
+            }catch(Exception $e){
+                $this->page404($e->getMessage());
+            }
+            
+        }
+    private function page404($errorMsg){
+        require_once('./views/notfound.php');
+    }
 }
+
                         
                         
   

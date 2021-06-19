@@ -11,15 +11,9 @@ class Client{
     private $adresse;
     private $login;
     private $pass;
-    private $match;
-
-
     public function __construct()
         {
         }
-
-
-
     /**
      * Get the value of id
      */ 

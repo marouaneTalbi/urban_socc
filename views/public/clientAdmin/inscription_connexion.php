@@ -1,7 +1,6 @@
 <?php
 ob_start();
 ?>
-
 <div class="container ">
     <div class="row">
             <div class="container col-7 card p-5 mt-5">
