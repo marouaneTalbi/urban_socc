@@ -12,17 +12,17 @@ class AdminUserController{
 public function listUsers(){
     AuthController::isLogged();
     if(isset($_GET['id']) && isset($_GET['status']) && !empty($_GET['id'])){
-        $id = $_GET['id'];
-        $status = $_GET['status'];
-        $use = new UserAdmin();
+        $id = trim(htmlentities(addslashes($_GET['id'])));
+        $status = trim(htmlentities(addslashes($_GET['status'])));
+        $user = new UserAdmin();
             if($status == 1){
                 $status = 0;
             }else{
                 $status = 1;
             }
-        $use->setId($id);
-        $use->setStatus($status);
-        $this->admUser->updateStatut($use);
+        $user->setId($id);
+        $user->setStatus($status);
+        $this->admUser->updateStatut($user);
     }
     $allU = $this->admUser->getUsers();
     require_once('./views/admin/user/adminUserList.php');
@@ -40,15 +40,22 @@ public function suppUser(){
 }
 
 public function ajoutUser(){
+
     AuthController::isLogged();
+
     if(isset ($_POST['submit'])){
+
         if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL) && strlen($_POST['pass']) >= 4){
+
             $firstname = trim(htmlentities(addslashes($_POST['firstname'])));
             $name = trim(htmlentities(addslashes($_POST['name'])));
             $login = trim(htmlentities(addslashes($_POST['login'])));
             $email = trim(htmlentities(addslashes($_POST['email'])));
             $pass = md5(trim(htmlentities(addslashes($_POST['pass']))));
             $grade = (trim(htmlentities(addslashes($_POST['grade']))));
+
+
+
         $user = new UserAdmin();
             $user->setFirstname($firstname);
             $user->setName($name);
@@ -94,6 +101,7 @@ public function ModifUser(){
 }
 
 public function login(){
+    
     if(isset($_POST['soumis'])){
         if(strlen($_POST['pass']) >= 4 && !empty($_POST['loginEmail'])){
             $loginEmail = trim(htmlentities(addslashes($_POST['loginEmail'])));

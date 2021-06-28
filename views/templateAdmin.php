@@ -26,6 +26,8 @@
   </h4>
   
 <?php if(isset($_SESSION['Auth'])){ ?>
+
+
 <a href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
   <button class="dropdown-btn"><i class="fas fa-layer-group text-white"></i>TERRINS
     <i class="fa fa-caret-down"></i>
@@ -41,6 +43,7 @@
     <a href="index.php?action=list_client"><i class="fas fa-list"></i>Liste</a>
     <a href="index.php?action=add_client"><i class="fas fa-plus"></i>Ajout</a>
   </div>
+
   <button class="dropdown-btn"><i class="fas fa-layer-group text-white"></i>RESERVATIONS
     <i class="fa fa-caret-down"></i>
   </button>
